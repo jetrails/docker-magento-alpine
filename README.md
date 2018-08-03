@@ -4,6 +4,8 @@
 ![](https://img.shields.io/badge/Version-1.0.0-lightgray.svg?style=for-the-badge)
 ![](https://img.shields.io/badge/License-MIT-lightgray.svg?style=for-the-badge)
 ![](https://img.shields.io/badge/Magento-2-lightgray.svg?style=for-the-badge)
+![](https://img.shields.io/docker/stars/jetrails/magento-alpine.svg?style=for-the-badge&colorB=9f9f9f)
+![](https://img.shields.io/docker/pulls/jetrails/magento-alpine.svg?style=for-the-badge&colorB=9f9f9f)
 
 <img src="docs/images/preview.png" width="400px" />
 
