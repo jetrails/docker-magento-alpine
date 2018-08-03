@@ -1,0 +1,24 @@
+version: "2"
+
+services:
+    php-fpm:
+        image: jetrails/magento-alpine:php-fpm-7.1
+        build: src/php-fpm-7.1
+    php-cli:
+        image: jetrails/magento-alpine:php-cli-7.1
+        build: src/php-cli-7.1
+    php-cron:
+        image: jetrails/magento-alpine:php-cron-7.1
+        build: src/php-cron-7.1
+    nginx:
+        image: jetrails/magento-alpine:nginx
+        build: src/nginx
+    mysql:
+        image: jetrails/magento-alpine:mysql
+        build: src/mysql
+    varnish:
+        image: jetrails/magento-alpine:varnish
+        build: src/varnish
+    redis:
+        image: jetrails/magento-alpine:redis
+        build: src/redis
