@@ -32,8 +32,8 @@ RUN apk --update --no-cache add \
 	php7-zip \
 	php7-zlib
 
-RUN addgroup -g 1000 magento
-RUN adduser -D -S -G magento -u 1000 -s /bin/sh magento
+RUN addgroup -g 1000 magento && \
+	adduser -D -S -G magento -u 1000 -s /bin/sh magento
 
 RUN curl --silent --show-error https://getcomposer.org/installer | php && \
 	mv composer.phar /usr/bin/composer

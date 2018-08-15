@@ -21,8 +21,9 @@ RUN mkdir -p /var/www/ssl && \
 
 COPY ./bin/startup.sh /usr/local/bin/startup.sh
 COPY ./conf/nginx.conf /etc/nginx/nginx.conf
-COPY ./conf/http.conf /etc/nginx/conf.d/http.conf
 COPY ./conf/https.conf /etc/nginx/conf.d/https.conf
+COPY ./conf/magento-1.conf /etc/nginx/available.d/magento-1.conf
+COPY ./conf/magento-2.conf /etc/nginx/available.d/magento-2.conf
 
 EXPOSE 8080 443
 WORKDIR /var/www/html

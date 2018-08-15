@@ -1,0 +1,1 @@
+* * * * * /bin/sh /var/www/html/cron.sh >> /var/www/html/var/log/magento.cron.log

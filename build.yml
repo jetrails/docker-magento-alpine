@@ -1,15 +1,24 @@
 version: "2"
 
 services:
-    php-fpm:
+    php-fpm-7.1:
         image: jetrails/magento-alpine:php-fpm-7.1
         build: src/php-fpm-7.1
-    php-cli:
+    php-cli-7.1:
         image: jetrails/magento-alpine:php-cli-7.1
         build: src/php-cli-7.1
-    php-cron:
+    php-cron-7.1:
         image: jetrails/magento-alpine:php-cron-7.1
         build: src/php-cron-7.1
+    php-fpm-5.6:
+        image: jetrails/magento-alpine:php-fpm-5.6
+        build: src/php-fpm-5.6
+    php-cli-5.6:
+        image: jetrails/magento-alpine:php-cli-5.6
+        build: src/php-cli-5.6
+    php-cron-5.6:
+        image: jetrails/magento-alpine:php-cron-5.6
+        build: src/php-cron-5.6
     nginx:
         image: jetrails/magento-alpine:nginx
         build: src/nginx

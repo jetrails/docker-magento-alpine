@@ -12,7 +12,7 @@ networks:
                 - subnet: "192.168.7.0/28"
 services:
     php-fpm:
-        image: jetrails/magento-alpine:php-fpm-7.1
+        image: jetrails/magento-alpine:php-fpm-5.6
         restart: unless-stopped
         volumes:
             - app-sync:/var/www/html:rw
@@ -21,12 +21,14 @@ services:
                 aliases:
                     - php-fpm.docker.internal
         environment:
-            - VERBOSE=false
+            - VERBOSE=true
+        expose:
+            - "9000"
         links:
             - mysql
             - redis
     php-cli:
-        image: jetrails/magento-alpine:php-cli-7.1
+        image: jetrails/magento-alpine:php-cli-5.6
         volumes:
             - app-sync:/var/www/html:rw
         networks:
@@ -37,7 +39,7 @@ services:
             - mysql
             - redis
     php-cron:
-        image: jetrails/magento-alpine:php-cron-7.1
+        image: jetrails/magento-alpine:php-cron-5.6
         restart: unless-stopped
         volumes:
             - app-sync:/var/www/html:rw
@@ -60,7 +62,8 @@ services:
                 aliases:
                     - nginx.docker.internal
         environment:
-            - VERBOSE=false
+            - VERBOSE=true
+            - MAGENTO_VERSION=1
         links:
             - php-fpm
         ports:
