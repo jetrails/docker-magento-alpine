@@ -1,7 +1,7 @@
 # Docker Magento Alpine
 > Docker development environment for staging Magento 1 & Magento 2 on Alpine 3.6
 
-![](https://img.shields.io/badge/Version-1.0.3-lightgray.svg?style=for-the-badge)
+![](https://img.shields.io/badge/Version-1.0.4-lightgray.svg?style=for-the-badge)
 ![](https://img.shields.io/badge/License-MIT-lightgray.svg?style=for-the-badge)
 ![](https://img.shields.io/badge/Magento-All-lightgray.svg?style=for-the-badge)
 ![](https://img.shields.io/docker/stars/jetrails/magento-alpine.svg?style=for-the-badge&colorB=9f9f9f)
