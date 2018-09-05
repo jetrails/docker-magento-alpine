@@ -12,5 +12,5 @@ if [[ "$VERBOSE" == "true" ]]; then
 fi
 
 cp "/etc/nginx/available.d/magento-$MAGENTO_VERSION.conf" "/etc/nginx/conf.d/http.conf"
-chown -R nginx:nginx /var/www
+chown -R nginx:nginx /var/www /var/tmp/nginx
 nginx -g 'daemon off;'
