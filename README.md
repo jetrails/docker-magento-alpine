@@ -24,6 +24,9 @@ The docker containers within this repository were build for development purposes
 - `php-fpm-7.1` [php-fpm-7.1/Dockerfile](src/php-fpm-7.1/Dockerfile)
 - `php-cli-7.1` [php-cli-7.1/Dockerfile](src/php-cli-7.1/Dockerfile)
 - `php-cron-7.1` [php-cron-7.1/Dockerfile](src/php-cron-7.1/Dockerfile)
+- `php-fpm-7.2` [php-fpm-7.2/Dockerfile](src/php-fpm-7.2/Dockerfile)
+- `php-cli-7.2` [php-cli-7.2/Dockerfile](src/php-cli-7.2/Dockerfile)
+- `php-cron-7.2` [php-cron-7.2/Dockerfile](src/php-cron-7.2/Dockerfile)
 
 ## Getting Started
 
