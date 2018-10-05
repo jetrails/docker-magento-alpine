@@ -1,0 +1,11 @@
+sudo: true
+dist: trusty
+
+jobs:
+    include:
+        - stage: build and push docker images
+          script:
+            - make build_all
+            - docker images
+            - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+            - make publish_all

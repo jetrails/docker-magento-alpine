@@ -1,7 +1,7 @@
 # Docker Magento Alpine
 > Docker development environment for staging Magento 1 & Magento 2 on Alpine 3.6
 
-![](https://img.shields.io/badge/Version-1.0.4-lightgray.svg?style=for-the-badge)
+![](https://img.shields.io/travis/jetrails/docker-magento-alpine.svg?style=for-the-badge&colorB=9f9f9f)
 ![](https://img.shields.io/badge/License-MIT-lightgray.svg?style=for-the-badge)
 ![](https://img.shields.io/badge/Magento-All-lightgray.svg?style=for-the-badge)
 ![](https://img.shields.io/docker/stars/jetrails/magento-alpine.svg?style=for-the-badge&colorB=9f9f9f)
@@ -27,7 +27,7 @@ The docker containers within this repository were build for development purposes
 
 ## Getting Started
 
-Using shared volumes on MacOS with Docker is painfully slow. That is why we use **docker-sync** for sharing volumes with and between docker containers. While this solution has a slightly longer initial up-time, it makes up for it when the containers are started and initially synced. We also use **docker-compose** to build/run our docker containers because of it's simplicity. Sample docker-compose files for Magento 1 and Magento 2 can be found in the [dist](dist) directory. Similarly, there is a __docker-sync.yml__ file that can be used alongside either configuration. Assuming that your Magento installation lives in _public_html_ of your project folder, and the appropriate _docker-compose.yml_ and _docker-sync.yml_ files are found in the same directory, then you can start docker-sync and run the docker containers using the following sequence of commands:
+Using shared volumes on MacOS with Docker is painfully slow. That is why we use **docker-sync** for sharing volumes with and between docker containers. While this solution has a slightly longer initial up-time, it makes up for it when the containers are started and initially synced. We also use **docker-compose** to run our docker containers because of it's simplicity. Sample docker-compose files for Magento 1 and Magento 2 can be found in the [dist](dist) directory. Similarly, there is a __docker-sync.yml__ file that can be used alongside either configuration. Assuming that your Magento installation lives in _public_html_ of your project folder, and the appropriate _docker-compose.yml_ and _docker-sync.yml_ files are found in the same directory, then you can start docker-sync and run the docker containers using the following sequence of commands:
 
 ```shell
 docker-sync start
@@ -57,9 +57,14 @@ Below are the possible environment variable that can be passed to the _mysql_ do
 When NGINX starts, it copies the appropriate configuration file so it can be used. This configuration file is determined by the environment variable below. If no variable is passed then the below value is set.
 - `MAGENTO_VERSION=2`
 
-## Build Process
+## Build System
 
-Building our docker images is easy since we use docker-compose to do it for us. Simply run `docker-compose -f build.yml build` to build the docker containers from source. Once built, and with proper permission, feel free to push them to docker using `docker push jetrails/magento-alpine:<tag>`.
+Building our docker images is easy. We use a simple [Makefile](Makefile) to manage building and publishing our docker images. As part of our CI/CD pipeline, we use [Travis-CI](https://travis-ci.org) to build our docker images on every push to the master branch. If the build process is successfull, then those new images will be pushed to docker hub. Please note that pull requests are not built automatically to avoid automated pushes to docker hub. Below are all the commands that are implemented within our build system:
+
+- `make build_all`: build all docker images that are found under _src_ directory
+- `make build <tag>`: build specific image by passing the tag name as a parameter
+- `make publish_all`: push all docker images that have a folder in _src_
+- `make publish <tag>`: push specific image by passing the tag name as a parameter
 
 ## Issues / Feature Requests
 
