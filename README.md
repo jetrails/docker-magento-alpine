@@ -50,11 +50,7 @@ docker-sync clean # Only if not starting again
 All docker images, except for the php-cli containers, have the ability to tail their container's relevant logs if the `VERBOSE=true` flag is passed as an environmental variable. Passing it to the container is optional since by default `VERBOSE=false`. It is explicitly stated within the sample _docker-compose.yml_ file for documentation purposes only.  Please also note that you will only be able to see the verbose output of these containers if you run docker-compose without the _detach_ flag, i.e. `docker-compose up`.
 
 ### mysql
-Below are the possible environment variable that can be passed to the _mysql_ docker container with some sample values. If non are passed, then only the _root_ user will exist with the default password of _mysql_.
-- `MYSQL_ROOT_PASSWORD=mysql`
-- `MYSQL_USER_NAME=magento_db_user`
-- `MYSQL_USER_PASSWORD=password123`
-- `MYSQL_DATABASE=magento`
+Since we build off of the `mysql:5.7` image, the environment variables will look the same. One exeption is that we use `MYSQL_USER_NAME` instead of `MYSQL_USER` and `MYSQL_USER_PASSWORD` instead of `MYSQL_PASSWORD`. This is for backwards compatibility purposes. A full list of environment variables can be found [here](https://hub.docker.com/_/mysql#environment-variables).
 
 ### nginx
 When NGINX starts, it copies the appropriate configuration file so it can be used. This configuration file is determined by the environment variable below. If no variable is passed then the below value is set.
