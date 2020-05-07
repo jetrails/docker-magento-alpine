@@ -23,7 +23,8 @@ RUN docker-php-ext-install \
 	pdo_mysql \
 	soap \
 	xsl \
-	zip
+	zip \
+	sockets
 
 RUN usermod -u 1000 nobody && \
 	groupmod -g 1000 nobody

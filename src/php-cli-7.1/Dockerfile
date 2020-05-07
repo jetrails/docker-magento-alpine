@@ -30,7 +30,8 @@ RUN apk --update --no-cache add \
 	php7-xmlwriter \
 	php7-xsl \
 	php7-zip \
-	php7-zlib
+	php7-zlib \
+	php7-sockets
 
 RUN addgroup -g 1000 magento && \
 	adduser -D -S -G magento -u 1000 -s /bin/sh magento

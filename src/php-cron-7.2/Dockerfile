@@ -23,7 +23,8 @@ RUN docker-php-ext-install \
 	pdo_mysql \
 	soap \
 	xsl \
-	zip
+	zip \
+	sockets
 
 RUN addgroup -g 1000 magento && \
 	adduser -D -S -H -G magento -u 1000 -s /bin/sh magento && \

@@ -26,7 +26,8 @@ RUN apk --update --no-cache add \
 	php7-xmlwriter \
 	php7-xsl \
 	php7-zip \
-	php7-zlib
+	php7-zlib \
+	php7-sockets
 
 RUN usermod -u 1000 nobody && \
 	groupmod -g 1000 nobody

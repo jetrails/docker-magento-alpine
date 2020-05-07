@@ -23,7 +23,8 @@ RUN apk --update --no-cache add \
 	php5-xml \
 	php5-xsl \
 	php5-zip \
-	php5-zlib
+	php5-zlib  \
+	php5-sockets
 
 RUN usermod -u 1000 nobody && \
 	groupmod -g 1000 nobody

@@ -27,7 +27,8 @@ RUN apk --update --no-cache add \
 	php5-xml \
 	php5-xsl \
 	php5-zip \
-	php5-zlib
+	php5-zlib \
+	php5-sockets
 
 RUN addgroup -g 1000 magento && \
 	adduser -D -S -G magento -u 1000 -s /bin/sh magento
