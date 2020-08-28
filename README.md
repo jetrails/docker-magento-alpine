@@ -68,3 +68,31 @@ Building our docker images is easy. We use a simple [Makefile](Makefile) to mana
 ## Issues / Feature Requests
 
 If any issues come up or any feature are requested, please feel free to open up an issue through Github. For all other inquiries, feel free to email us at development@jetrails.com.
+
+### Install Magento Using Command-Line
+
+```shell
+docker-compose run php-cli
+magento setup:install \
+    --base-url=http://howtospeedupmagento.com \
+    --base-url-secure=https://howtospeedupmagento.com \
+    --db-host=mysql \
+    --db-name=magento \
+    --db-user=magento \
+    --db-password=magento \
+    --backend-frontname=admin \
+    --admin-firstname=jetrails \
+    --admin-lastname=jetrails \
+    --admin-email=admin@example.com \
+    --admin-user=jetrails \
+    --admin-password=jetrails312 \
+    --language=en_US \
+    --currency=USD \
+    --timezone=America/Chicago \
+    --use-rewrites=1 \
+    --search-engine=elasticsearch7 \
+    --elasticsearch-host=elasticsearch \
+    --elasticsearch-port=9200 \
+    --elasticsearch-username=elastic \
+    --elasticsearch-password=changeme
+```

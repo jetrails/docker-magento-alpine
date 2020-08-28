@@ -29,7 +29,7 @@ build: src/$(passed_tag)/**/*
 		exit 1; \
 	else \
 		echo "Building $(docker_repository):$(passed_tag) ..."; \
-		docker build "src/$(passed_tag)" -t "$(docker_repository):$(passed_tag)"; \
+		docker build --squash "src/$(passed_tag)" -t "$(docker_repository):$(passed_tag)"; \
 	fi
 
 publish:
