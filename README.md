@@ -74,7 +74,7 @@ If any issues come up or any feature are requested, please feel free to open up 
 ```shell
 docker-compose run php-cli
 magento setup:install \
-    --base-url=http://howtospeedupmagento.com \
+    --base-url=https://howtospeedupmagento.com \
     --base-url-secure=https://howtospeedupmagento.com \
     --db-host=mysql \
     --db-name=magento \
